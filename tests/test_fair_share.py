@@ -32,7 +32,7 @@ def test_decimal_expenses():
 
 def test_rejects_non_numeric_expense():
     with pytest.raises(TypeError):
-        calculate_balances({"Ruth": "100", "Yael": 50})
+        calculate_balances({"Ruth": "100", "Yael": 50})  # type: ignore
 
 
 def test_rejects_negative_expense():
