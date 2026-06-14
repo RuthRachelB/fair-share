@@ -25,7 +25,7 @@ def test_different_expenses():
 #test 5- expenses with decimal values
 def test_decimal_expenses():
     expenses = {"Ruth": 123.45, "Yael": 67.89, "shulamit": 90.12}
-    expected_balances = {"Ruth": 18.44, "Yael": -37.12, "shulamit": 18.68}
+    expected_balances = {"Ruth":29.63, "Yael": -25.93, "shulamit": -3.7}
     assert calculate_balances(expenses) == expected_balances
 
 
