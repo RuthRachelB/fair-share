@@ -1,15 +1,15 @@
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry-core.masonry.api"
-
-[tool.poetry]
+[project]
 name = "fair-share"
 version = "0.1.0"
 description = "An equal expense splitting calculator"
-authors = ["Ruth Bar"]
+authors = [{ name = "Ruth Bar" }]
+requires-python = ">=3.10"
+dependencies = []
 
-[tool.poetry.dependencies]
-python = "^3.10"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
+[dependency-groups]
+dev = [
+    "pytest>=9.1.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.17",
+    "ty>=0.0.49",
+]
