@@ -10,9 +10,11 @@ This project uses `uv` for dependency management. To get everything set up and i
 
 ```bash
 uv sync
-
+```
+## 🛠️ Development & QA
 To keep the code sharp, stable, and error-free, use these pre-configured checks:
 
+```bash
 # Run tests and check coverage
 uv run pytest --cov
 
@@ -21,3 +23,4 @@ uv run ty check
 
 # Run linter for style and formatting
 uv run ruff check .
+```
