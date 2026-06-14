@@ -24,3 +24,12 @@ uv run ty check
 # Run linter for style and formatting
 uv run ruff check .
 ```
+
+## 🚀 Usage
+
+```python
+from main import calculate_balances
+
+expenses = {"Ruth": 150, "Yael": 50, "Shulamit": 100}
+print(calculate_balances(expenses))
+# {'Ruth': 50.0, 'Yael': -50.0, 'Shulamit': 0.0}
