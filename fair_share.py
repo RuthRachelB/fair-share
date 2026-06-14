@@ -1,4 +1,5 @@
-def calculate_balances(expenses: dict[str, float]) -> dict[str, float]:
+from collections.abc import Mapping
+def calculate_balances(expenses: Mapping[str,int | float]) -> dict[str, float]:
     if not expenses:
         return {}
 
