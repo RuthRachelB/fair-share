@@ -25,6 +25,18 @@ uv run ty check
 uv run ruff check .
 uv run ruff format --check .
 ```
+## 💻 Run
+
+To see the project in action, run the main script:
+
+```bash
+uv run python main.py
+```
+
+**Expected output:**
+```text
+{'Ruth': Decimal('50.00'), 'Yael': Decimal('-50.00'), 'Shulamit': Decimal('0.00')}
+```
 
 ## 🚀 Usage
 
@@ -35,3 +47,4 @@ from fair_share import calculate_balances
 expenses = {"Ruth": 150, "Yael": 50, "Shulamit": 100}
 print(calculate_balances(expenses))
 # {'Ruth': Decimal('50.00'), 'Yael': Decimal('-50.00'), 'Shulamit': Decimal('0.00')}
+```

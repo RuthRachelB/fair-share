@@ -38,7 +38,11 @@ def test_different_expenses():
 
 
 def test_decimal_expenses():
-    expenses = {"Ruth": 123.45, "Yael": 67.89, "Shulamit": 90.12}
+    expenses = {
+        "Ruth": Decimal("123.45"),
+        "Yael": Decimal("67.89"),
+        "Shulamit": Decimal("90.12"),
+    }
     expected_balances = {
         "Ruth": Decimal("29.63"),
         "Yael": Decimal("-25.93"),
