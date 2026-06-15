@@ -10,9 +10,9 @@ def calculate_balances(expenses: Mapping[str, int | float]) -> dict[str, float]:
             raise TypeError(f"Expense for {person} must be numeric")
         if paid_amount < 0:
             raise ValueError(f"Expense for {person} cannot be negative")
-    total_expenses = sum(expenses.values())
+    total_expenses = sum(Decimal(str(amount)) for amount in expenses.values())
     num_people = len(expenses)
-    fair_share = total_expenses / num_people
+    fair_share = total_expenses / Decimal(str(num_people))
 
     balances = {}
     for person, paid_amount in expenses.items():
