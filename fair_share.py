@@ -6,7 +6,7 @@ def calculate_balances(expenses: Mapping[str, int | float]) -> dict[str, float]:
     if not expenses:
         return {}
     for person, paid_amount in expenses.items():
-        if not isinstance(paid_amount, (int, float)):
+        if isinstance(paid_amount, bool) or not isinstance(paid_amount, (int, float)):
             raise TypeError(f"Expense for {person} must be numeric")
         if paid_amount < 0:
             raise ValueError(f"Expense for {person} cannot be negative")

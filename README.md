@@ -29,7 +29,7 @@ uv run ruff format --check .
 ## 🚀 Usage
 
 ```python
-from main import calculate_balances
+from fair_share import calculate_balances
 
 expenses = {"Ruth": 150, "Yael": 50, "Shulamit": 100}
 print(calculate_balances(expenses))

@@ -1,5 +1,5 @@
 import pytest
-from main import calculate_balances
+from fair_share import calculate_balances
 
 
 def test_empty_expenses():
@@ -7,20 +7,20 @@ def test_empty_expenses():
 
 
 def test_equal_split():
-    expenses = {"Ruth": 100, "Yael": 100, "shulamit": 100}
-    expected_balances = {"Ruth": 0.0, "Yael": 0.0, "shulamit": 0.0}
+    expenses = {"Ruth": 100, "Yael": 100, "Shulamit": 100}
+    expected_balances = {"Ruth": 0.0, "Yael": 0.0, "Shulamit": 0.0}
     assert calculate_balances(expenses) == expected_balances
 
 
 def test_one_person_paid_all():
-    expenses = {"Ruth": 300, "Yael": 0, "shulamit": 0}
-    expected_balances = {"Ruth": 200.0, "Yael": -100.0, "shulamit": -100.0}
+    expenses = {"Ruth": 300, "Yael": 0, "Shulamit": 0}
+    expected_balances = {"Ruth": 200.0, "Yael": -100.0, "Shulamit": -100.0}
     assert calculate_balances(expenses) == expected_balances
 
 
 def test_different_expenses():
-    expenses = {"Ruth": 150, "Yael": 50, "shulamit": 100}
-    expected_balances = {"Ruth": 50.0, "Yael": -50.0, "shulamit": 0.0}
+    expenses = {"Ruth": 150, "Yael": 50, "Shulamit": 100}
+    expected_balances = {"Ruth": 50.0, "Yael": -50.0, "Shulamit": 0.0}
     assert calculate_balances(expenses) == expected_balances
 
 
