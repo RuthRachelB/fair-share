@@ -29,8 +29,9 @@ uv run ruff format --check .
 ## 🚀 Usage
 
 ```python
+from decimal import Decimal
 from fair_share import calculate_balances
 
 expenses = {"Ruth": 150, "Yael": 50, "Shulamit": 100}
 print(calculate_balances(expenses))
-# {'Ruth': 50.0, 'Yael': -50.0, 'Shulamit': 0.0}
+# {'Ruth': Decimal('50.00'), 'Yael': Decimal('-50.00'), 'Shulamit': Decimal('0.00')}
