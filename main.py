@@ -1,4 +1,5 @@
 from collections.abc import Mapping
+from decimal import Decimal
 
 
 def calculate_balances(expenses: Mapping[str, int | float]) -> dict[str, float]:
@@ -15,6 +16,8 @@ def calculate_balances(expenses: Mapping[str, int | float]) -> dict[str, float]:
 
     balances = {}
     for person, paid_amount in expenses.items():
-        balances[person] = round(paid_amount - fair_share, 2)
+        balances[person] = float(
+            (Decimal(str(paid_amount)) - fair_share).quantize(Decimal("0.01"))
+        )
 
     return balances
