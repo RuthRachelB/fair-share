@@ -1,23 +1,11 @@
-from collections.abc import Mapping
-from decimal import Decimal
+from fair_share import calculate_balances
 
 
-def calculate_balances(expenses: Mapping[str, int | float]) -> dict[str, float]:
-    if not expenses:
-        return {}
-    for person, paid_amount in expenses.items():
-        if not isinstance(paid_amount, (int, float)):
-            raise TypeError(f"Expense for {person} must be numeric")
-        if paid_amount < 0:
-            raise ValueError(f"Expense for {person} cannot be negative")
-    total_expenses = sum(Decimal(str(amount)) for amount in expenses.values())
-    num_people = len(expenses)
-    fair_share = total_expenses / Decimal(str(num_people))
+def main() -> None:
+    example_expenses = {"Ruth": 150, "Yael": 50, "Shulamit": 100}
+    balances = calculate_balances(example_expenses)
+    print(balances)
 
-    balances = {}
-    for person, paid_amount in expenses.items():
-        balances[person] = float(
-            (Decimal(str(paid_amount)) - fair_share).quantize(Decimal("0.01"))
-        )
 
-    return balances
+if __name__ == "__main__":
+    main()
