@@ -23,6 +23,7 @@ uv run ty check
 
 # Run linter for style and formatting
 uv run ruff check .
+uv run ruff format --check .
 ```
 
 ## 🚀 Usage
